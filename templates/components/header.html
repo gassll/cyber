@@ -1,0 +1,45 @@
+{% load static %}
+
+<header class="header">
+    <div class="header-container">
+
+        <!-- LOGO -->
+        <a href="/" class="logo">
+            <img src="{% static 'icons/logo.svg' %}" class="logo-img" alt="logo">
+        </a>
+
+        <!-- NAV -->
+        <nav class="nav">
+            <a href="#">Главная</a>
+            <a href="#">Новости</a>
+            <a href="#">Бронирование</a>
+            <a href="#">Карьера</a>
+            <a href="#">Контакты</a>
+        </nav>
+
+        <!-- ACTIONS -->
+        <div class="actions">
+            <a class="book" href="#">Забронировать</a>
+            <a class="login" href="#">Войти</a>
+        </div>
+
+        <!-- BURGER -->
+        <button class="burger" onclick="toggleMenu()">☰</button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Главная</a>
+        <a href="#">Новости</a>
+        <a href="#">Бронирование</a>
+        <a href="#">Карьера</a>
+        <a href="#">Контакты</a>
+    </div>
+</header>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("mobileMenu").classList.toggle("active");
+    }
+</script>

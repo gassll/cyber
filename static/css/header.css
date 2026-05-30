@@ -1,0 +1,249 @@
+/* HEADER */
+.header {
+    width: 100%;
+    background: linear-gradient(105deg, rgba(13, 13, 13, 1) 50%, rgba(62, 62, 62, 1) 100%);
+    border-bottom: 1px solid #1f1f1f;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-weight: 500;
+}
+
+/* CONTAINER */
+.header-container {
+    max-width: 1740px;
+    margin: 0 auto;
+    padding: 18px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 270px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    gap: 28px;
+}
+
+.nav a {
+    position: relative;
+    display: inline-block;
+    padding: 6px 10px;
+
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #d6d6d6;
+
+    transition: 0.25s ease;
+
+}
+
+/* уголки */
+.nav a::before,
+.nav a::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    transition: 0.35s ease;
+}
+
+.nav a::before {
+    bottom: 0;
+    left: 0;
+
+    border-left: 2px solid #ff2d2d;
+    border-bottom: 2px solid #ff2d2d;
+
+    transform: translate(-4px, 4px);
+}
+
+.nav a::after {
+    top: 0;
+    right: 0;
+
+    border-top: 2px solid #ff2d2d;
+    border-right: 2px solid #ff2d2d;
+
+    transform: translate(4px, -4px);
+}
+
+.nav a:hover::before,
+.nav a:hover::after {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* ACTIONS */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.login {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 40px;
+
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #fff;
+    text-decoration: none;
+
+    background: linear-gradient(135deg, #7b2cff, #ff2d2d);
+
+    clip-path: polygon(
+            12px 0%,
+            100% 0%,
+            100% calc(100% - 12px),
+            calc(100% - 12px) 100%,
+            0% 100%,
+            0% 12px
+    );
+
+    transition: 0.3s ease;
+}
+
+.login:hover::before,
+.login:hover::after {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.login:hover {
+    background: linear-gradient(135deg, #ff2d2d, #7b2cff);
+    transform: translateY(-1px);
+}
+
+.book {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+}
+
+.book::before,
+.book::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+
+    opacity: 0;
+    transition: 0.35s ease;
+}
+
+.book::before {
+    bottom: 0;
+    left: 0;
+
+    border-left: 2px solid #ff2d2d;
+    border-bottom: 2px solid #ff2d2d;
+
+    transform: translate(-4px, 4px);
+}
+
+.book::after {
+    top: 0;
+    right: 0;
+
+    border-top: 2px solid #ff2d2d;
+    border-right: 2px solid #ff2d2d;
+
+    transform: translate(4px, -4px);
+}
+
+.book:hover::before,
+.book:hover::after {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* BURGER */
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #0a0a0a;
+    border-top: 1px solid #222;
+    padding: 15px 20px;
+}
+
+.mobile-menu a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 12px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.mobile-menu a:hover {
+    color: #ff2d2d;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .nav {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .actions {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .logo-img {
+        width: 140px;
+    }
+}

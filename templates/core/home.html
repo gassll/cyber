@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Cyber Arena{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="{% static 'video/hero.mp4' %}" type="video/mp4">
+        <source src="{% static 'video/hero.webm' %}" type="video/webm">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="hero-badge">
+                <span>CYBERX COMMUNITY</span>
+            </div>
+
+            <h1 class="hero-title">ТВОЯ ИГРА НАЧИНАЕТСЯ ЗДЕСЬ</h1>
+
+            <p class="hero-desc">
+                Сеть киберспортивных клубов <br>
+                и арен в 13 странах мира
+            </p>
+
+            <a href="#" class="hero-btn">Забронировать</a>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-label">игровых<br>клубов</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">стран</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="feature-card">МОЩНОЕ ЖЕЛЕЗО</div>
+            <div class="feature-card">ЛУЧШЕЕ КОМЬЮНИТИ</div>
+        </div>
+    </div>
+</section>
+{% endblock %}
