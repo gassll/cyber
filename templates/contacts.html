@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contacts-page">
+    <div class="contacts-container">
+
+        <h1 class="contacts-page-title">КОНТАКТЫ</h1>
+
+        <div class="contacts-grid">
+
+            <div class="contact-card contact-image">
+                <img src="{% static 'images/contacts1.jpg' %}" alt="CyberX">
+            </div>
+
+            <div class="contact-card contact-info contact-accent">
+                <h2>АРЕНДОДАТЕЛЯМ</h2>
+                <p>Хотите предложить свою локацию для открытия нового CyberX Community?</p>
+                <a href="#write-us" class="contact-btn">Написать</a>
+            </div>
+
+            <div class="contact-card contact-image">
+                <img src="{% static 'images/contacts2.jpg' %}" alt="CyberX">
+            </div>
+
+            <div class="contact-card contact-info contact-dark">
+                <h3>КОНТАКТЫ</h3>
+                <p>Москва, Профсоюзная, 56<br>(Башня Cherry Tower)</p>
+                <p><a href="tel:88004441302">8 (800) 444-13-02</a></p>
+                <p><a href="mailto:info@cyberx-franchise.ru">info@cyberx-franchise.ru</a></p>
+            </div>
+
+            <div class="contact-card contact-info contact-wide">
+                <h3>ООО «РИКИС»</h3>
+                <p>ИНН: 2368010296</p>
+                <p>ОГРН: 1182375044697</p>
+                <p>Почтовый адрес: 352630, Краснодарский кр,<br>
+                    г. Белореченск, район Белореченский,<br>
+                    ул. Интернациональная, д. 30</p>
+            </div>
+
+            <div class="contact-card contact-info contact-small contact-accent">
+                <h3>НАПИШИТЕ НАМ</h3>
+                <p>Если вы хотите поделиться своим мнением</p>
+                <a href="#write-us" class="contact-btn">Написать</a>
+            </div>
+
+            <div class="contact-card contact-image">
+                <img src="{% static 'images/contacts3.jpg' %}" alt="CyberX">
+            </div>
+
+            <div class="contact-card contact-info contact-small contact-accent">
+                <h3>ФРАНШИЗА</h3>
+                <p>Узнайте подробные условия открытия CyberX<br>+7 (495) 182-14-14</p>
+            </div>
+
+        </div>
+
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="success-message">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="write-us" id="write-us">
+            <div class="write-us-card">
+                <h2>НАПИСАТЬ НАМ</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Имя" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="phone" placeholder="Телефон">
+                    <textarea name="message" placeholder="Сообщение" required></textarea>
+                    <button type="submit">ОТПРАВИТЬ</button>
+                </form>
+            </div>
+
+            <div class="map-card">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?text=Белореченск%2C%20улица%20Мира%2C%20164&z=16&l=map&pt=39.8729,44.7656,pm2rdm"
+                    width="100%"
+                    height="100%"
+                    frameborder="0">
+                </iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

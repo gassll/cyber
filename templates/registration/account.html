@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+
+    <div class="account">
+
+        <h1>Личный кабинет</h1>
+
+        <div class="account-card">
+            <p><strong>Имя:</strong> {{ request.user.username }}</p>
+            <p><strong>Email:</strong> {{ request.user.email }}</p>
+            <p><strong>Дата регистрации:</strong> {{ request.user.date_joined }}</p>
+        </div>
+
+        <div class="account-actions">
+            <a href="{% url 'logout' %}" class="btn btn-danger">Выйти</a>
+        </div>
+
+    </div>
+
+    <style>
+
+    </style>
+
+{% endblock %}

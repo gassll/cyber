@@ -4,46 +4,258 @@
 {% block title %}Cyber Arena{% endblock %}
 
 {% block content %}
-<section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto">
-        <source src="{% static 'video/hero.mp4' %}" type="video/mp4">
-        <source src="{% static 'video/hero.webm' %}" type="video/webm">
-    </video>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="{% static 'video/hero.mp4' %}" type="video/mp4">
+            <source src="{% static 'video/hero.webm' %}" type="video/webm">
+        </video>
 
-    <div class="hero-overlay"></div>
+        <div class="hero-overlay"></div>
 
-    <div class="hero-inner">
-        <div class="hero-left">
-            <div class="hero-badge">
-                <span>CYBERX COMMUNITY</span>
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <span>CYBERX COMMUNITY</span>
+                </div>
+
+                <h1 class="hero-title">ТВОЯ ИГРА НАЧИНАЕТСЯ ЗДЕСЬ</h1>
+
+                <p class="hero-desc">
+                    Сеть киберспортивных клубов <br>
+                    и арен в 13 странах мира
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#" class="hero-book-btn">
+                        Забронировать онлайн
+                    </a>
+                </div>
+
+                <div class="hero-bottom">
+
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">300+</div>
+                            <div class="stat-label">
+                                игровых<br>клубов
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-number">13</div>
+                            <div class="stat-label">
+                                стран
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-right">
+                        <div class="feature-card">
+                            МОЩНОЕ ЖЕЛЕЗО
+                        </div>
+
+                        <div class="feature-card">
+                            ЛУЧШЕЕ КОМЬЮНИТИ
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <h1 class="hero-title">ТВОЯ ИГРА НАЧИНАЕТСЯ ЗДЕСЬ</h1>
+        </div>
+    </section>
 
-            <p class="hero-desc">
-                Сеть киберспортивных клубов <br>
-                и арен в 13 странах мира
+
+    <section class="about-community">
+
+        <div class="about-blur blur-purple"></div>
+        <div class="about-blur blur-blue"></div>
+
+        <div class="about-container">
+
+            <div class="about-top reveal">
+
+                <div class="about-left">
+
+                    <div class="about-watermark">
+                        CYBER
+                    </div>
+
+                    <h2 class="about-title">
+                        CYBERX COMMUNITY —<br>
+                        НОВЫЙ ВИД<br>
+                        РАЗВЛЕЧЕНИЙ
+                    </h2>
+
+                    <p class="about-text">
+                        Мы создаём лучшие игровые пространства:
+                        высокотехнологичное оборудование,
+                        продуманные зоны отдыха,
+                        собственные турниры и атмосферу,
+                        которая объединяет игроков
+                        из десятков городов и стран.
+                    </p>
+
+                </div>
+
+                <div class="about-image-wrapper">
+                    <img
+                            src="{% static 'images/about.jpg' %}"
+                            alt=""
+                            class="about-image"
+                    >
+                </div>
+
+            </div>
+
+            <h3 class="about-subtitle">
+                ДОБРО ПОЖАЛОВАТЬ В CYBERX COMMUNITY
+            </h3>
+
+            <div class="about-cards">
+
+                <div class="about-card reveal">
+                    <img src="{% static 'images/about1.jpg' %}" alt="">
+                </div>
+
+                <div class="about-card reveal">
+                    <img src="{% static 'images/about2.jpg' %}" alt="">
+                </div>
+
+                <div class="about-card reveal">
+                    <img src="{% static 'images/about3.jpg' %}" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="gallery-section">
+
+        <div class="gallery-header reveal">
+            <h2 class="gallery-title">
+                НАША АТМОСФЕРА
+            </h2>
+
+            <p class="gallery-subtitle">
+                Лучшие игровые пространства, турниры и комьюнити
             </p>
+        </div>
 
-            <a href="#" class="hero-btn">Забронировать</a>
+        <div class="swiper gallerySwiper reveal">
 
-            <div class="hero-stats">
-                <div class="stat-card">
-                    <div class="stat-number">300+</div>
-                    <div class="stat-label">игровых<br>клубов</div>
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide gallery-slide">
+                    <img src="{% static 'images/slide1.jpg' %}" alt="">
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-number">13</div>
-                    <div class="stat-label">стран</div>
+                <div class="swiper-slide gallery-slide">
+                    <img src="{% static 'images/slide2.jpg' %}" alt="">
                 </div>
+
+                <div class="swiper-slide gallery-slide">
+                    <img src="{% static 'images/slide3.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide gallery-slide">
+                    <img src="{% static 'images/slide4.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide gallery-slide">
+                    <img src="{% static 'images/slide5.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide gallery-slide">
+                    <img src="{% static 'images/slide6.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide gallery-slide">
+                    <img src="{% static 'images/slide7.jpg' %}" alt="">
+                </div>
+
             </div>
+
+            <!-- BUTTONS -->
+
+            <div class="gallery-nav gallery-prev">
+                ‹
+            </div>
+
+            <div class="gallery-nav gallery-next">
+                ›
+            </div>
+
         </div>
 
-        <div class="hero-right">
-            <div class="feature-card">МОЩНОЕ ЖЕЛЕЗО</div>
-            <div class="feature-card">ЛУЧШЕЕ КОМЬЮНИТИ</div>
-        </div>
-    </div>
-</section>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+
+        const reveals = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
+
+        reveals.forEach((el) => {
+            observer.observe(el);
+        });
+
+    </script>
+
+    {#слайдер#}
+    <script>
+
+        const gallerySwiper = new Swiper('.gallerySwiper', {
+
+            loop: true,
+
+            speed: 900,
+
+            spaceBetween: 36,
+
+            grabCursor: true,
+
+            centeredSlides: true,
+
+            slidesPerView: 'auto',
+
+            navigation: {
+                nextEl: '.gallery-next',
+                prevEl: '.gallery-prev',
+            },
+
+            breakpoints: {
+
+                0: {
+                    spaceBetween: 20,
+                },
+
+                768: {
+                    spaceBetween: 36,
+                }
+            }
+        });
+
+    </script>
 {% endblock %}
+

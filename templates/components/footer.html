@@ -1,0 +1,54 @@
+{% load static %}
+
+<footer class="footer">
+
+    <div class="container footer-top">
+
+        <!-- ЛОГО + КОПИРАЙТ -->
+        <div class="footer-left">
+            <img src="{% static 'icons/logo.svg' %}" class="logo" alt="logo">
+
+            <div class="footer-legal">
+                <div>© 2017–2026 ООО «РИКИС»</div>
+                <div>ОГРН 1182375044697 / ИНН 2368010296</div>
+            </div>
+        </div>
+
+        <!-- НАВИГАЦИЯ -->
+        <nav class="footer-nav">
+            <a href="/">ГЛАВНАЯ</a>
+            <a href="#">НОВОСТИ</a>
+            <a href="#">БРОНИРОВАНИЕ</a>
+            <a href="#">КАРЬЕРА</a>
+            <a href="/contacts/">КОНТАКТЫ</a>
+        </nav>
+
+        <!-- КОНТАКТЫ + СОЦСЕТИ -->
+        <div class="footer-right">
+            <a href="tel:88004441302" class="phone">8 (800) 444-13-02</a>
+            <a href="mailto:info@cyberx-franchise.ru" class="email">
+                info@cyberx-franchise.ru
+            </a>
+
+            <div class="socials">
+                <a href="https://t.me/+3U38mC1PnS8zN2Ni">
+                    <img src="{% static 'icons/tg.svg' %}" alt="tg">
+                </a>
+
+                <a href="https://www.youtube.com/@cyberxarena">
+                    <img src="{% static 'icons/yt.svg' %}" alt="yt">
+                </a>
+
+                <a href="https://vk.com/cyberx_community">
+                    <img src="{% static 'icons/vk.svg' %}" alt="vk">
+                </a>
+
+                <a href="https://rutube.ru/channel/43794237/">
+                    <img src="{% static 'icons/rt.svg' %}" alt="r">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</footer>

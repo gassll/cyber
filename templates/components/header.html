@@ -3,6 +3,11 @@
 <header class="header">
     <div class="header-container">
 
+        <!-- BURGER -->
+        <button class="burger" id="burger">
+            ☰
+        </button>
+
         <!-- LOGO -->
         <a href="/" class="logo">
             <img src="{% static 'icons/logo.svg' %}" class="logo-img" alt="logo">
@@ -10,36 +15,42 @@
 
         <!-- NAV -->
         <nav class="nav">
-            <a href="#">Главная</a>
-            <a href="#">Новости</a>
-            <a href="#">Бронирование</a>
-            <a href="#">Карьера</a>
-            <a href="#">Контакты</a>
+            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Главная</a>
+
+            <a href="/news/" class="{% if '/news/' in request.path %}active{% endif %}">Новости</a>
+
+            <a href="/booking/" class="{% if '/booking/' in request.path %}active{% endif %}">Бронирование</a>
+
+            <a href="/career/" class="{% if '/career/' in request.path %}active{% endif %}">Карьера</a>
+
+            <a href="/contacts/" class="{% if '/contacts/' in request.path %}active{% endif %}">Контакты</a>
         </nav>
 
         <!-- ACTIONS -->
         <div class="actions">
             <a class="book" href="#">Забронировать</a>
-            <a class="login" href="#">Войти</a>
-        </div>
 
-        <!-- BURGER -->
-        <button class="burger" onclick="toggleMenu()">☰</button>
+            {% if request.user.is_authenticated %}
+                <a class="login" href="{% url 'account' %}">Кабинет</a>
+            {% else %}
+                <a class="login" href="{% url 'login' %}">Войти</a>
+            {% endif %}
+        </div>
 
     </div>
 
     <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#">Главная</a>
-        <a href="#">Новости</a>
-        <a href="#">Бронирование</a>
-        <a href="#">Карьера</a>
-        <a href="#">Контакты</a>
-    </div>
-</header>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="/" class="{% if request.path == '/' %}active{% endif %}">Главная</a>
+        <a href="/news/" class="{% if '/news/' in request.path %}active{% endif %}">Новости</a>
+        <a href="/booking/" class="{% if '/booking/' in request.path %}active{% endif %}">Бронирование</a>
+        <a href="/career/" class="{% if '/career/' in request.path %}active{% endif %}">Карьера</a>
+        <a href="/contacts/" class="{% if '/contacts/' in request.path %}active{% endif %}">Контакты</a>
 
-<script>
-    function toggleMenu() {
-        document.getElementById("mobileMenu").classList.toggle("active");
-    }
-</script>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'account' %}">Кабинет</a>
+        {% else %}
+            <a href="{% url 'login' %}">Войти</a>
+        {% endif %}
+    </nav>
+</header>
